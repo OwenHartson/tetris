@@ -8,11 +8,11 @@ Block::Block() : cellSize{30},
 
 Block::~Block(){};
 
-void Block::Draw(void){
+void Block::Draw(int offsetX, int offsetY){
     std::vector<Posisiton> tiles = GetCellPositions();
 
     for(Posisiton item : tiles){
-        DrawRectangle(item.column * cellSize + 1, item.row * cellSize + 1, cellSize - 1, cellSize - 1, colors[id]);
+        DrawRectangle(item.column * cellSize + offsetX, item.row * cellSize + offsetY, cellSize - 1, cellSize - 1, colors[id]);
     }
 
     return;

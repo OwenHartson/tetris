@@ -9,7 +9,7 @@ class Block{
         /* Methods */
         Block();
         ~Block();
-        void Draw();
+        void Draw(int, int);
         void Move(int, int);
         std::vector<Posisiton> GetCellPositions();
         void Rotate();

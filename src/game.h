@@ -8,24 +8,31 @@ class Game{
         /* Methods */
         Game();
         ~Game();
-        Block GetRandomBlock();
-        std::vector<Block> GetAllBlocks();
         void Draw();
         void HandleInput();
+        void MoveBlockDown();
 
         /* Data */
-        Grid grid;
+        bool gameOver;
+        int score;
+        bool paused{false};
 
     private:
         /* Methods */
+        Block GetRandomBlock();
+        std::vector<Block> GetAllBlocks();
         void MoveBlockLeft();
         void MoveBlockRight();
-        void MoveBlockDown();
         bool IsBlockOutside();
         void RotateBlock();
+        void LockBlock();
+        bool BlockFits();
+        void Reset();
+        void UpdateScore(int, int);
 
         /* Data */
         std::vector<Block> blocks;
         Block currentBlock;
         Block nextBlock;
+        Grid grid;
 };
