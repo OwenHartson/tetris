@@ -24,7 +24,6 @@ bool EventTriggered(double);
 
 /*==================== MAIN ====================*/
 int main(){
-    Color darkBlue = { 44, 44, 127, 255 };
     Font font = Font();
     Game game;
 
@@ -51,14 +50,14 @@ int main(){
             DrawTextEx(font, "GAME OVER", {320, 450}, 30, 2, WHITE);
         }
 
-        DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lightBlue);
+        DrawRectangleRounded({320, 55, 170, 60}, (float)0.3, 6, lightBlue);
 
         char scoreText[10];
         sprintf(scoreText, "%d", game.score);
         Vector2 textSize = MeasureTextEx(font, scoreText, 38, 2);
         DrawTextEx(font, scoreText, {320 + (170 - textSize.x) / 2, 65}, 38, 2, WHITE);
 
-        DrawRectangleRounded({320, 215, 170, 180}, 0.3, 6, lightBlue);
+        DrawRectangleRounded({320, 215, 170, 180}, (float)0.3, 6, lightBlue);
         game.Draw();
 
         if(game.paused){

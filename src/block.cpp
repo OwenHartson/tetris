@@ -63,7 +63,7 @@ void Block::UndoRotation(void){
     rotationState--;
 
     if(rotationState == -1){
-        rotationState = cells.size() - 1;
+        rotationState = static_cast<int>(cells.size() - 1);
     }
 
     return;

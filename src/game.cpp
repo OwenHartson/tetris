@@ -44,7 +44,7 @@ Block Game::GetRandomBlock(void){
         blocks = GetAllBlocks();
     }
 
-    int randomIndex = rand() % blocks.size();
+    int randomIndex = static_cast<int>(rand() % blocks.size());
     Block block = blocks[randomIndex];
     blocks.erase(blocks.begin() + randomIndex);
     

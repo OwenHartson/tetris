@@ -6,9 +6,9 @@
 #include "position.h"
 
 /*==================== CONSTRUCTOR ====================*/
-Posisiton::Posisiton(int row, int column){
-    this->row = row;
-    this->column = column;
+Posisiton::Posisiton(int rows, int columns){
+    this->row = rows;
+    this->column = columns;
 };
 
 /*==================== DESTRUCTOR ====================*/

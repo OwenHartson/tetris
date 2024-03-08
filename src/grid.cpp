@@ -90,9 +90,9 @@ void Grid::ClearRow(int row){
 }
 
 /*==================== MOVE ROW DOWN ====================*/
-void Grid::MoveRowDown(int row, int numRows){
+void Grid::MoveRowDown(int row, int numberRows){
     for(int column = 0; column < numCols; column++){
-        grid[row + numRows][column] = grid[row][column];
+        grid[row + numberRows][column] = grid[row][column];
         grid[row][column] = 0;
     }
     
