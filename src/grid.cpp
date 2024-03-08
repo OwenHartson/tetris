@@ -1,14 +1,22 @@
+/*
+    IMPLEMENTATION FILE FOR GRID CLASS
+*/
+
+/*==================== IMPORTS ====================*/
 #include "grid.h"
 #include "colors.h"
 #include <iostream>
 
+/*==================== CONSTRUCTOR ====================*/
 Grid::Grid() : numRows{20}, numCols{10}, cellSize{30}{ 
     Initialize(); 
     colors = GetCellColors(); 
 }
 
+/*==================== DESTRUCTOR ====================*/
 Grid::~Grid(){}
 
+/*==================== IS CELL OUTSIDE ====================*/
 bool Grid::IsCellOutside(int row, int column){
     if(row >= 0 && row < numRows && column >= 0 && column < numCols){
         return false;
@@ -17,6 +25,7 @@ bool Grid::IsCellOutside(int row, int column){
     return true;
 }
 
+/*==================== INITIALIZE ====================*/
 void Grid::Initialize(void){
     for(int row = 0; row < numRows; row++){
         for(int column = 0; column < numCols; column++){
@@ -27,6 +36,7 @@ void Grid::Initialize(void){
     return;
 }
 
+/*==================== PRINT ====================*/
 void Grid::Print(void){
     for(int row = 0; row < numRows; row++){
         for(int column = 0; column < numCols; column++){
@@ -38,6 +48,7 @@ void Grid::Print(void){
     return;
 }
 
+/*==================== DRAW ====================*/
 void Grid::Draw(void){
     for(int row = 0; row < numRows; row++){
         for(int column = 0; column < numCols; column++){
@@ -49,6 +60,7 @@ void Grid::Draw(void){
     return;
 }
 
+/*==================== IS CELL EMPTY ====================*/
 bool Grid::IsCellEmpty(int row, int column){
     if(grid[row][column] == 0){
         return true;
@@ -57,6 +69,7 @@ bool Grid::IsCellEmpty(int row, int column){
     return false;
 }
 
+/*==================== IS ROW FULL ====================*/
 bool Grid::IsRowFull(int row){
     for(int column = 0; column < numCols; column++){
         if(grid[row][column] == 0){
@@ -67,6 +80,7 @@ bool Grid::IsRowFull(int row){
     return true;
 }
 
+/*==================== CLEAR ROW ====================*/
 void Grid::ClearRow(int row){
     for(int column = 0; column < numCols; column++){
         grid[row][column] = 0;
@@ -75,6 +89,7 @@ void Grid::ClearRow(int row){
     return;
 }
 
+/*==================== MOVE ROW DOWN ====================*/
 void Grid::MoveRowDown(int row, int numRows){
     for(int column = 0; column < numCols; column++){
         grid[row + numRows][column] = grid[row][column];
@@ -84,6 +99,7 @@ void Grid::MoveRowDown(int row, int numRows){
     return;
 }
 
+/*==================== CLEAR FULL ROWS ====================*/
 int Grid::ClearFullRows(void){
     int completed = 0;
 

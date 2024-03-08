@@ -1,3 +1,17 @@
+/*
+    HEADER FILE FOR GAME CLASS
+
+    PUBLIC METHODS:
+        Draw()          -> DRAWS THE GAME FIELD
+        HandleInput()   -> HANDLES THE USER INPUT/KEY PRESSES
+        MoveBlockDown() -> MOVES THE  CURRENT BLOCK DOWN THE GAME FIELD
+
+    PUBLIC DATA:
+        bool gameOver   -> IF TRUE THE GAME IS OVER (SET TO FALSE BY DEFAULT)
+        int score       -> HOLDS THE GAME TOTAL SCORE (SET TO 0 BY DEFAULT)
+        bool paused     -> IF TRUE THE GAME WILL BE PAUSED (SET TO FALSE BY DEFAULT)
+*/
+
 #pragma once
 #include "grid.h"
 #include "blocks.cpp"

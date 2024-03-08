@@ -1,3 +1,9 @@
+/*
+    Main File Contains:
+        -> Main Game Loop
+*/
+
+/*==================== IMPORTS ====================*/
 #include <iostream>
 #include <string>
 #include <raylib.h>
@@ -5,14 +11,18 @@
 #include "src/game.h"
 #include "src/colors.h"
 
+/*==================== NAMESPACES ====================*/
 using namespace std;
 
+/*==================== GLOBALS ====================*/
 const int WINDOW_WIDTH {500};
 const int WINDOW_HEIGHT{620};
 double LAST_UPDATE_TIME{0};
 
+/*==================== FORWARD FUNCTION DEC ====================*/
 bool EventTriggered(double);
 
+/*==================== MAIN ====================*/
 int main(){
     Color darkBlue = { 44, 44, 127, 255 };
     Font font = Font();
@@ -62,6 +72,7 @@ int main(){
     return 0;
 }
 
+/*==================== EVENT TRIGGER ====================*/
 bool EventTriggered(double interval){
     double currentTime = GetTime();
 

@@ -1,5 +1,11 @@
+/*
+    IMPLEMENTATION FILE FOR COLOR DECLORATIONS
+*/
+
+/*==================== IMPORTS ====================*/
 #include "colors.h"
 
+/*==================== COLOR DEFINITIONS ====================*/
 const Color darkGrey = {26, 31, 40, 255};
 const Color green =    {47, 230, 23, 255};
 const Color red =      {232, 18, 18, 255};
@@ -11,6 +17,7 @@ const Color blue =     {13, 64, 216, 255};
 const Color lightBlue ={59, 85, 162, 255};
 const Color darkBlue = {44, 44, 127, 255};
 
+/*==================== RETURN A VECTOR OF COLOR OBJECTS ====================*/
 std::vector<Color> GetCellColors(void){
     return {darkGrey, green, red, orange, yellow, purple, cyan, blue};
 }

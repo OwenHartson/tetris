@@ -1,3 +1,18 @@
+/*
+    HEADER FILE FOR BLOCK CLASS
+
+    PUBLIC METHODS:
+        Draw(int, int)                      -> DRAWS THE BLOCK BASED ON THE GRID
+        Move(int, int)                      -> MOVES THE BLOCK AROUND THE GRID BASED OFF PROVIDED OFFSETS X AND Y
+        vector<Posisiton> GetCellPositions()-> RETURNS THE CELL POSITION OF THE BLOCKS
+        Rotate()                            -> ROTATES THE BLOCK
+        UndoRotation()                      -> UNDOES THE BLOCK ROTATION
+
+    PUBLIC DATA:
+        int id                                      -> THE ID (TYPE) OF THE BLOCK
+        std::map<int, std::vector<Posisiton>> cells -> THE BLOCKS POSITION ON THE GRID
+*/
+
 #pragma once
 #include <vector>
 #include <map>

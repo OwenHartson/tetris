@@ -1,13 +1,21 @@
+/*
+    IMPLEMENTATION FILE FOR BLOCK CLASS
+*/
+
+/*==================== IMPORTS ====================*/
 #include "block.h"
 
+/*==================== CONSTRUCTOR ====================*/
 Block::Block() : cellSize{30}, 
                  rotationState{0}, 
                  colors{GetCellColors()},
                  rowOffset{0},
                  columnOffset{0} {};
 
+/*==================== DESTRUCTOR ====================*/
 Block::~Block(){};
 
+/*==================== DRAW ====================*/
 void Block::Draw(int offsetX, int offsetY){
     std::vector<Posisiton> tiles = GetCellPositions();
 
@@ -18,6 +26,7 @@ void Block::Draw(int offsetX, int offsetY){
     return;
 }
 
+/*==================== MOVE ====================*/
 void Block::Move(int rows, int columns){
     rowOffset += rows;
     columnOffset += columns;
@@ -25,6 +34,7 @@ void Block::Move(int rows, int columns){
     return;
 }
 
+/*==================== GET CELL POSITIONS ====================*/
 std::vector<Posisiton> Block::GetCellPositions(){
     std::vector<Posisiton> tiles = cells[rotationState];
     std::vector<Posisiton> movedTiles;
@@ -37,6 +47,7 @@ std::vector<Posisiton> Block::GetCellPositions(){
     return movedTiles;
 }
 
+/*==================== ROTATE ====================*/
 void Block::Rotate(void){
     rotationState++;
 
@@ -47,6 +58,7 @@ void Block::Rotate(void){
     return;
 }
 
+/*==================== UNDO-ROTATION ====================*/
 void Block::UndoRotation(void){
     rotationState--;
 

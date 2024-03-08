@@ -1,6 +1,12 @@
+/*
+    IMPLEMENTATION FILE FOR GAME CLASS
+*/
+
+/*==================== IMPORTS ====================*/
 #include "game.h"
 #include <random>
 
+/*==================== CONSTRUCTOR ====================*/
 Game::Game() : grid{Grid()}, 
                blocks{GetAllBlocks()}, 
                currentBlock{GetRandomBlock()}, 
@@ -8,8 +14,10 @@ Game::Game() : grid{Grid()},
                gameOver{false},
                score{0} {}
 
+/*==================== DESTRUCTOR ====================*/
 Game::~Game(){}
 
+/*==================== UPDATE SCORE ====================*/
 void Game::UpdateScore(int linesCleared, int moveDownPoints){
     switch(linesCleared){
         case 1:
@@ -30,6 +38,7 @@ void Game::UpdateScore(int linesCleared, int moveDownPoints){
     return;
 }
 
+/*==================== GET RANDOM BLOCK ====================*/
 Block Game::GetRandomBlock(void){
     if(blocks.empty()){
         blocks = GetAllBlocks();
@@ -42,10 +51,12 @@ Block Game::GetRandomBlock(void){
     return block;
 }
 
+/*==================== GET ALL BLOCKS ====================*/
 std::vector<Block> Game::GetAllBlocks(){
     return {IBlock(), JBlock(), LBlock(), OBlock(), SBlock(), TBlock(), ZBlock()};
 }
 
+/*==================== DRAW ====================*/
 void Game::Draw(void){
     grid.Draw();
     currentBlock.Draw(11, 11);
@@ -65,6 +76,7 @@ void Game::Draw(void){
     return;
 }
 
+/*==================== RESET ====================*/
 void Game::Reset(void){
     grid.Initialize();
     blocks = GetAllBlocks();
@@ -75,6 +87,7 @@ void Game::Reset(void){
     return;
 }
 
+/*==================== HANDLE INPUT ====================*/
 void Game::HandleInput(void){
     int keyPressed = GetKeyPressed();
 
@@ -124,6 +137,7 @@ void Game::HandleInput(void){
     return;
 }
 
+/*==================== MOVE BLOCK LEFT ====================*/
 void Game::MoveBlockLeft(void){
     if(!gameOver){
         currentBlock.Move(0, -1);
@@ -136,6 +150,7 @@ void Game::MoveBlockLeft(void){
     return;
 }
 
+/*==================== MOVE BLOCK RIGHT ====================*/
 void Game::MoveBlockRight(void){
     if(!gameOver){
         currentBlock.Move(0, 1);
@@ -148,6 +163,7 @@ void Game::MoveBlockRight(void){
     return;
 }
 
+/*==================== MOVE BLOCK DOWN ====================*/
 void Game::MoveBlockDown(void){
     if(!gameOver){
         currentBlock.Move(1, 0);
@@ -161,6 +177,7 @@ void Game::MoveBlockDown(void){
     return;
 }
 
+/*==================== ROTATE BLOCK ====================*/
 void Game::RotateBlock(void){
     if(!gameOver){
         currentBlock.Rotate();
@@ -173,6 +190,7 @@ void Game::RotateBlock(void){
     return;
 }
 
+/*==================== IS BLOCK OUTSIDE ====================*/
 bool Game::IsBlockOutside(void){
     std::vector<Posisiton> tiles = currentBlock.GetCellPositions();
 
@@ -185,6 +203,7 @@ bool Game::IsBlockOutside(void){
     return false;
 }
 
+/*==================== LOCK BLOCK ====================*/
 void Game::LockBlock(void){
     std::vector<Posisiton> tiles = currentBlock.GetCellPositions();
 
@@ -205,6 +224,7 @@ void Game::LockBlock(void){
     return;
 }
 
+/*==================== BLOCK FITS ====================*/
 bool Game::BlockFits(void){
     std::vector<Posisiton> tiles = currentBlock.GetCellPositions();
 

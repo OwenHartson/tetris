@@ -1,3 +1,12 @@
+/*
+    INHERITED CLASSES FOR EACH BLOCK TYPE
+
+    EACH BLOCK SETS:
+        -> ID TO IDENTIFY THE TYPE OF BLOCK
+        -> ITS COLORED IN POSITIONS (CELLS)
+        -> ITS STARTING POSITION ON THE SCREEN, MOVE(X, Y)
+*/
+
 #include "block.h"
 #include "position.h"
 

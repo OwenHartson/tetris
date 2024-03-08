@@ -1,3 +1,7 @@
+/*
+    HEADER FILE FOR COLOR DECLORATIONS
+*/
+
 #pragma once
 #include <raylib.h>
 #include <vector>
